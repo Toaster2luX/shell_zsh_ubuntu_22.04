@@ -1,0 +1,21 @@
+---
+  - name: Changement pour l'utilisateur courant du shell bash par zsh
+    become: yes
+    user:
+      name: "{{ the_user }}"
+      shell: /bin/zsh
+    tags: shell
+
+
+  - name: /!\ Fin du playbook
+    pause: prompt="Presser ENTRER cela va fermer la session de l'utilisaeur ou pressez Ctrl+c pour annuler"
+    tags: shell
+
+
+  - name: fermeture de la session avec un kill 
+    become: no
+    shell: 
+      cmd: pkill -u $USER
+    tags: shell
+
+    

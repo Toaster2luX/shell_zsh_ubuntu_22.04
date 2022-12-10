@@ -1,0 +1,5 @@
+- hosts: local
+  become: no
+  roles:
+    - role_zsh
+
